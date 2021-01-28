@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: zemlyachev
+      changes:
+        - createTable:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: person_id_pkey
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(255)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: age
+                  type: int
+                  constrains:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+              - column:
+                  name: city_of_living
+                  type: varchar(255)
+                  constrains:
+                    nullable: false
