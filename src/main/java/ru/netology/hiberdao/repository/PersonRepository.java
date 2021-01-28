@@ -16,7 +16,7 @@ public class PersonRepository {
 
   public List<Person> getPersonsByCity(String city) {
     return entityManager.createQuery(
-            "SELECT p FROM Person p WHERE upper(p.cityOfLiving) = :city", Person.class)
+            "SELECT p FROM persons p WHERE upper(p.cityOfLiving) = :city", Person.class)
             .setParameter("city", city.toUpperCase(Locale.ROOT))
             .getResultList();
   }
