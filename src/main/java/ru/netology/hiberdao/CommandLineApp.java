@@ -22,7 +22,7 @@ public class CommandLineApp implements CommandLineRunner {
   public void run(String... args) throws Exception {
     var names = List.of("Петя", "Иван", "Саша", "Петр", "Инокентий");
     var surnames = List.of("Иванов", "Петров", "Сидоров", "Сковородкин", "Рыжий");
-    var cities = List.of("Москва", "Королев", "Мвтищи");
+    var cities = List.of("Москва", "Королев", "Мытищи");
 
     var random = new Random();
     IntStream.range(0, 50)
