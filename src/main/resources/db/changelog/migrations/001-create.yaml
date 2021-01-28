@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 001
+      id: 1
       author: zemlyachev
       changes:
         - createTable:
@@ -12,22 +12,22 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: person_id_pkey
+                    primaryKeyName: pk_person_id
                     nullable: false
               - column:
                   name: name
                   type: varchar(255)
-                  constrains:
+                  constraints:
                     nullable: false
               - column:
                   name: surname
                   type: varchar(255)
-                  constrains:
+                  constraints:
                     nullable: false
               - column:
                   name: age
                   type: int
-                  constrains:
+                  constraints:
                     nullable: false
               - column:
                   name: phone_number
@@ -35,5 +35,5 @@ databaseChangeLog:
               - column:
                   name: city_of_living
                   type: varchar(255)
-                  constrains:
+                  constraints:
                     nullable: false
