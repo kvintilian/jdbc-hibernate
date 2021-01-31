@@ -1,5 +1,6 @@
 package ru.netology.hiberdao.controller;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.hiberdao.entity.Person;
 import ru.netology.hiberdao.repository.PersonRepository;
@@ -24,7 +25,7 @@ public class PersonController {
 
   @GetMapping("/by-age-less")
   public List<Person> getPersonsByAgeAsLower(@RequestParam("age") int age) {
-    return personRepository.findAllByAgeLessThanOrderByAgeAsc(age);
+    return personRepository.findAllByAgeLess(age, Sort.by("age"));
   }
 
   @GetMapping("/by-fullname")
