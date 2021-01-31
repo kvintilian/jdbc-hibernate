@@ -1,23 +1,16 @@
 package ru.netology.hiberdao.repository;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import ru.netology.hiberdao.entity.Person;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Locale;
+import java.util.Optional;
 
-@Repository
-public class PersonRepository {
+public interface PersonRepository extends JpaRepository<Person, Long> {
 
-  @PersistenceContext
-  private EntityManager entityManager;
+  List<Person> findAllByCityOfLiving(String cityOfLiving);
 
-  public List<Person> getPersonsByCity(String city) {
-    return entityManager.createQuery(
-            "SELECT p FROM persons p WHERE upper(p.cityOfLiving) = :city", Person.class)
-            .setParameter("city", city.toUpperCase(Locale.ROOT))
-            .getResultList();
-  }
+  List<Person> findAllByAgeLessThanOrderByAgeAsc(int age);
+
+  Optional<List<Person>> findAllByNameAndSurname(String name, String surname);
 }

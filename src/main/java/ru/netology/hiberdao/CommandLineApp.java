@@ -1,12 +1,12 @@
 package ru.netology.hiberdao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.netology.hiberdao.entity.Person;
+import ru.netology.hiberdao.repository.PersonRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -14,8 +14,8 @@ import java.util.stream.IntStream;
 @Component
 public class CommandLineApp implements CommandLineRunner {
 
-  @PersistenceContext
-  private EntityManager entityManager;
+  @Autowired
+  private PersonRepository personRepository;
 
   @Override
   @Transactional
@@ -34,7 +34,7 @@ public class CommandLineApp implements CommandLineRunner {
                       .phoneNumber(Integer.toString(random.nextInt(1000)))
                       .cityOfLiving(cities.get(random.nextInt(cities.size())))
                       .build();
-              entityManager.persist(person);
+              personRepository.save(person);
             });
   }
 }
