@@ -1,1 +1,1 @@
-# Решение к задаче [DAO слой c JPA Repositories](https://github.com/netology-code/jd-homeworks/blob/master/spring-jpa/task1/README.md) по теме Spring JPA Repositories, JPQL
+# Решение к задаче [Безопасное приложение](https://github.com/netology-code/jd-homeworks/blob/master/spring_security/task1/README.md) по теме Безопасность в веб-приложениях, Spring Security

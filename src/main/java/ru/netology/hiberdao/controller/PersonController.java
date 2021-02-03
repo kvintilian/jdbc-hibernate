@@ -72,8 +72,8 @@ public class PersonController {
     personRepository.deleteById(id);
   }
 
-  @PostMapping("/deleye-by-person")
-  public void setDeletePerson(@RequestBody Person person) {
+  @PostMapping("/delete-by-person")
+  public void deletePerson(@RequestBody Person person) {
     personRepository.delete(person);
   }
 
